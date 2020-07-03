@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.navMarket {
+  display: flex;
+  height: 100px;
+  background-color: #cc5e5e;
+  width: 100%;
+  padding: 0 15%;
+}
+.navMarket .logoNavBar {
+  align-self: center;
+}
+.navMarket .logoNavBar img {
+  width: 250px;
+  height: auto;
+}
+
+.formularioAjuste {
+  margin-top: 20px;
+}
+
+.footMarket {
+  display: flex;
+  height: 80px;
+  background-color: #cc5e5e;
+  width: 100%;
+  padding: 0 15%;
+  bottom: 0;
+  position: absolute;
+}
+.footMarket .textFooter {
+  align-self: center;
+  color: #812a33;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=index.css.map */
