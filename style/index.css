@@ -44,4 +44,8 @@ body {
   font-size: 16px;
 }
 
+.produtosListMarket {
+  overflow-y: scroll;
+}
+
 /*# sourceMappingURL=index.css.map */

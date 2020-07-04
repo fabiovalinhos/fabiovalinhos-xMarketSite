@@ -9,6 +9,10 @@
 
     <!-- CSS  -->
     <link rel="stylesheet" href="/style/index.css">
+
+    <!-- Vue Js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <!-- CSS only bootstrap-->
     <link
       rel="stylesheet"
@@ -47,6 +51,10 @@
 
         <hr>
 
+        <div id="app" class="produtosListMarket">
+          {{info}}
+        </div>
+
         
       </div>
     
@@ -54,15 +62,15 @@
         <footer>
           <div class="footMarket">
             <div class="textFooter">
-              <span id="dataAno"></span> Xmarket
+             <span>&#169</span> <span id="dataAno"></span> Xmarket
             </div>
           </div>
         </footer>
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/index.js"></script>
-
     <!-- Toda estes links são do Bootstrap -->
     <!-- JS, Popper.js, and jQuery -->
     <script
