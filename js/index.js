@@ -40,11 +40,32 @@ var app = new Vue({
   data() {
     return {
       products: null,
+      errored: false,
+      produto: {
+        nome: '',
+        localizacao: '',
+      },
     };
   },
   mounted() {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
-      .then(response => (this.products = response.data));
+      .then(response => {this.products = response.data})
+      .catch(error => {
+        console.log(error);
+        this.errored = true;
+      })
+  },
+  methods: {
+    salvar(){
+     axios.post("api endereço", {
+       localdonome : this.produto.nome,
+       localdalocalizacao : this.produto.localizacao,
+     }).then(() => {
+       alert('salvo com sucesso')
+     }).catch(error => {
+       alert('erro pois não tem API :(')
+     }); 
+    }
   },
 });

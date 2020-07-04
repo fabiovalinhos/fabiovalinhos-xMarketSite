@@ -30,48 +30,59 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="app">
         
         <div class="formularioAjuste">
-            <form>
+            <form @submit.prevent = "salvar">
                 <div class="form-group">
                     <label for="formGroupExampleInput">Produto</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite o nome do produto">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Digite o nome do produto" v-model="produto.nome">
                 </div>
         
                 <div class="form-group">
                     <label for="formGroupExampleInput2">Localização</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite a localização do produto">
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Digite a localização do produto" v-model="produto.localizacao">
                 </div>
         
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
-
         </div>
 
         <hr>
 
         <h1>Lista de produtos</h1>
-        <div  class="produtosListMarket" id="app">
-          
-          <div v-for="product in products">
-            
-            <div class="produIdTitulo">
-              Produto <span class="product">{{product.id}}</span>
-            </div>
 
-            <div class="flexDescricaoProduto">
-              <div class="productDescription">
-                Descrição:
-              </div>
-              <div class="productDescriptionText">{{product.title}}</div>
-            </div>
 
-            <hr style="margin: 10px 10%;">
-
+        <section v-if="errored">
+          <div class="alert alert-danger" role="alert">
+            Problemas no servidor para carregar os produtos. Aguarde!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+        </section>
 
-        </div>
+        <section v-else>
+          <div  class="produtosListMarket">
+            <div v-for="product in products">
+              <div class="produIdTitulo">
+                Produto <span class="product">{{product.id}}</span>
+              </div>
+  
+              <div class="flexDescricaoProduto">
+                <div class="productDescription">
+                  Descrição:
+                </div>
+                <div class="productDescriptionText">
+                  {{product.title}}
+                </div>
+              </div>
+  
+              <hr style="margin: 10px 5%;">
+  
+            </div>
+          </div>
+        </section>
         
       </div>
     
