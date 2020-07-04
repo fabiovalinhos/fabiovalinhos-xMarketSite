@@ -39,12 +39,12 @@ var app = new Vue({
   el: "#app",
   data() {
     return {
-      info: null,
+      products: null,
     };
   },
   mounted() {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
-      .then(response => (this.info = response));
+      .then(response => (this.products = response.data));
   },
 });

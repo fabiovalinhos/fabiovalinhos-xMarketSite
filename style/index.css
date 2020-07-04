@@ -45,7 +45,22 @@ body {
 }
 
 .produtosListMarket {
+  margin-top: 30px;
   overflow-y: scroll;
+  max-height: 400px;
+}
+.produtosListMarket .produIdTitulo {
+  font-size: 22px;
+}
+.produtosListMarket .flexDescricaoProduto {
+  display: flex;
+  align-items: baseline;
+}
+.produtosListMarket .flexDescricaoProduto .productDescription {
+  font-size: 18px;
+}
+.produtosListMarket .flexDescricaoProduto .productDescriptionText {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

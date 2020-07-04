@@ -51,10 +51,27 @@
 
         <hr>
 
-        <div id="app" class="produtosListMarket">
-          {{info}}
-        </div>
+        <h1>Lista de produtos</h1>
+        <div  class="produtosListMarket" id="app">
+          
+          <div v-for="product in products">
+            
+            <div class="produIdTitulo">
+              Produto <span class="product">{{product.id}}</span>
+            </div>
 
+            <div class="flexDescricaoProduto">
+              <div class="productDescription">
+                Descrição:
+              </div>
+              <div class="productDescriptionText">{{product.title}}</div>
+            </div>
+
+            <hr style="margin: 10px 10%;">
+
+          </div>
+
+        </div>
         
       </div>
     

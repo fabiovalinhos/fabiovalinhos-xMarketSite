@@ -62,5 +62,24 @@ $backGroundColor: #cc5e5e;
 }
 
 .produtosListMarket {
+    margin-top: 30px;
     overflow-y: scroll;
+    max-height: 400px;
+
+    .produIdTitulo{
+        font-size: 22px;
+    }
+
+    .flexDescricaoProduto{
+        display: flex;
+        align-items: baseline;
+
+        .productDescription{
+            font-size: 18px;
+        }
+
+        .productDescriptionText{
+            margin-left: 10px;
+        }
+    }
 }
