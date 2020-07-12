@@ -49,23 +49,30 @@ var app = new Vue({
   },
   mounted() {
     axios
-      .get("https://jsonplaceholder.typicode.com/todos")
-      .then(response => {this.products = response.data})
-      .catch(error => {
+      .get("https://xsupermaket.firebaseio.com/products.json")
+      .then((response) => {
+        this.products = Object.values(response.data);
+
+      })
+      .catch((error) => {
         console.log(error);
         this.errored = true;
-      })
+      });
   },
   methods: {
     salvar(){
-     axios.post("api endereço", {
-       localdonome : this.produto.nome,
-       localdalocalizacao : this.produto.localizacao,
-     }).then(() => {
-       alert('salvo com sucesso')
-     }).catch(error => {
-       alert('erro pois não tem API :(')
-     }); 
+     axios
+       .post("https://xsupermaket.firebaseio.com/products.json", {
+         localdonome: this.produto.nome,
+         localdalocalizacao: this.produto.localizacao,
+       })
+       .then(() => {
+         alert("salvo com sucesso");
+       })
+       .catch((error) => {
+         alert("erro pois não tem API :(");
+         console.log(error);
+       }); 
     }
   },
 });
