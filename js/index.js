@@ -42,17 +42,16 @@ var app = new Vue({
       products: null,
       errored: false,
       produto: {
-        nome: '',
+        produto: '',
         localizacao: '',
       },
     };
   },
   mounted() {
     axios
-      .get("https://xsupermaket.firebaseio.com/products.json")
+      .get("https://xmarketapi.herokuapp.com/api/items")
       .then((response) => {
         this.products = Object.values(response.data);
-
       })
       .catch((error) => {
         console.log(error);
@@ -62,9 +61,9 @@ var app = new Vue({
   methods: {
     salvar(){
      axios
-       .post("https://xsupermaket.firebaseio.com/products.json", {
-         localdonome: this.produto.nome,
-         localdalocalizacao: this.produto.localizacao,
+       .post("https://xmarketapi.herokuapp.com/api/items", {
+         produto: this.produto.produto,
+         localizacao: this.produto.localizacao,
        })
        .then(() => {
          alert("salvo com sucesso");
